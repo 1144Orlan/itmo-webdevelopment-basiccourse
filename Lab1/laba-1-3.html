@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Laba-1-3</title>
+	</head>
+	<body>
+		<script>
+        function rightDeclension(numberOfDay)
+		{
+			var one = "день";
+			var two = "дня";
+			var five = "дней";
+
+			if(numberOfDay > 100)
+			numberOfDay %= 100;
+
+			if(numberOfDay > 20)
+			numberOfDay %= 10;
+
+			switch(numberOfDay)
+			{
+				case 1:
+				return one;
+				case 2:
+				case 3:
+				case 4:
+				return two;
+				default:
+				return five;
+			}		
+		}		
+		alert("До конца вашей учебы остается 14 "+rightDeclension(14));
+		alert("До конца вашей учебы остается 3 "+rightDeclension(3));
+		alert("До конца вашей учебы остается 1 "+rightDeclension(1));
+    </script>
+	</body>
+</html>
