@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Laba-1-4</title>
+	</head>
+	<body>
+	<script>
+        function NewClass(title, url) 
+		{ 	 
+			this.title = title; 
+			this.url = url; 	 
+			this.show = function() 
+						{
+							document.write("Title: " + this.title + "<br>"); 
+							document.write(" URL: " + this.url); 
+						}
+		}
+		
+var nc = new NewClass("Yandex", "ya.ru");
+nc.show();
+
+    </script>
+	</body>
+</html>
