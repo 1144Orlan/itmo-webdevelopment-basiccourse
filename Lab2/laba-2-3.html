@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Laba-2-3</title>
+    </head>
+    <body>
+        <main align="center">
+            <a href="#" onclick="openWindow(); return false;">Новое окно</a>
+        </main>
+        <script>
+            function openWindow() {
+                window.open(
+                    'about:blank',
+                    'newWindow',
+                    'width=300,height=400,menubar=yes,location=yes,toolbar=yes,status=yes,scrollbars=yes,resizable=yes'
+                );
+            }
+        </script>
+    </body>
+</html>
