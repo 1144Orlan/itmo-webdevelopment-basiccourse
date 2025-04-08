@@ -1,31 +1,48 @@
-
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Using Canvas</title>
-		<script type="text/javascript">
-		  function DrawGradient() {
-			var context = document.getElementById('canva_1').getContext('2d');
-
-var my_gradient = context.createLinearGradient(0, 0, 300, 225);
-my_gradient.addColorStop(0, "red");
-my_gradient.addColorStop(0.4, "DarkTurquoise");
-my_gradient.addColorStop(0.6, "green");
-my_gradient.addColorStop(1, "yellow");
-context.fillStyle = my_gradient;
-context.fillRect(0, 0, 350, 250);
-		 }
-		 
-		 function ClearRect() {
-            var context = document.getElementById('canva_1').getContext('2d');
-            context.clearRect(0, 0, 350, 250);
-          }
-		</script>
-	</head>
-	<body>
-		<main align="center">
-			<h2>Using Canvas API in final work</h2>
-			<canvas id="canva_1" width="350" height="250" style="border:4px double black;" onMouseOver="DrawGradient();" onMouseOut="ClearRect();"/>
-		</main>
-	</body>
+    <head>
+        <title>Using Canvas</title>
+        <script type="text/javascript">
+            function DrawGradient() {
+                var canvas = document.getElementById('canva_1');
+                if (canvas) {
+                    var context = canvas.getContext('2d');
+                    if (context) {
+                        var my_gradient = context.createLinearGradient(0, 0, 300, 225);
+                        my_gradient.addColorStop(0, "red");
+                        my_gradient.addColorStop(0.4, "DarkTurquoise");
+                        my_gradient.addColorStop(0.6, "green");
+                        my_gradient.addColorStop(1, "yellow");
+                        context.fillStyle = my_gradient;
+                        context.fillRect(0, 0, 350, 250);
+                    }
+                } else {
+                    console.error('Canvas element not found!');
+                }
+            }
+         
+            function ClearRect() {
+                var canvas = document.getElementById('canva_1');
+                if (canvas) {
+                    var context = canvas.getContext('2d');
+                    if (context) {
+                        context.clearRect(0, 0, 350, 250);
+                    }
+                } else {
+                    console.error('Canvas element not found!');
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <main align="center">
+            <h2>Using Canvas API in final work</h2>
+            <canvas id="canva_1" 
+                    width="350" 
+                    height="250" 
+                    style="border:4px double black;" 
+                    onMouseOver="DrawGradient();" 
+                    onMouseOut="ClearRect();"/>
+        </main>
+    </body>
 </html>

@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Laba-2-1</title>
-    </head>
-    <body>
-        <main align="center">
-            <img id="appleImage" src="./img/apple.jpg">
+	<head>
+		<title>Laba-2-1</title>
+	</head>
+	<body>
+		<main align="center">
+			<img id="appleImage" src="./img/apple.jpg">
         </main>
-        <script>
+			<script>
             var img = document.getElementById('appleImage');
+			if (img) {
             img.onload = function() {
                 var originalWidth = this.width;
                 this.onclick = function() {
                     this.width = (this.width === originalWidth) ? originalWidth * 2 : originalWidth;
                 };
             };
+	};
         </script>
-    </body>
-</html>
+		</body>
+	</html>
