@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Laba-5-1</title>	
+</head>
+<body>
+Пожалуйста, заполните обязательные поля.
+    <form>
+        <p>
+            <input type="text" required placeholder="Имя">
+            <img src="no.jpeg" width="10" height="10">
+        </p>
+        <p>
+            <input type="number" min="0" max="120" placeholder="Возраст">
+            <img src="yes.jpeg" width="10" height="10">
+        </p>
+        <p>
+            <input type="email" required placeholder="E-mail">
+            <img src="no.jpeg" width="10" height="10">
+        </p>
+        <p>
+            <input type="url" placeholder="Сайт">
+            <img src="yes.jpeg" width="10" height="10">
+        </p>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <script>
+        document.querySelector('input[type="text"]').oninput = function() {
+            this.nextElementSibling.src = this.value ? 'yes.jpeg' : 'no.jpeg';
+        };
+
+        document.querySelector('input[type="email"]').oninput = function() {
+            this.nextElementSibling.src = this.value ? 'yes.jpeg' : 'no.jpeg';
+        };
+    </script>
+</body>
+</html>

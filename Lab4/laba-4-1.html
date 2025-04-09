@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Laba-4-1</title>
+        <script type="text/javascript">
+            function DrawGradient() {
+                var canvas = document.getElementById('canva_1');
+                if (canvas) {
+                    var context = canvas.getContext('2d');
+                    if (context) {
+                        var my_gradient = context.createLinearGradient(0, 0, 300, 225);
+                        my_gradient.addColorStop(0, "red");
+						my_gradient.addColorStop(0.2, "MediumVioletRed");
+                        my_gradient.addColorStop(0.4, "DarkTurquoise");
+                        my_gradient.addColorStop(0.6, "green");
+						my_gradient.addColorStop(0.8, "YellowGreen");
+                        my_gradient.addColorStop(1, "yellow");
+                        context.fillStyle = my_gradient;
+                        context.fillRect(0, 0, 350, 250);
+                    }
+                } else {
+                    console.error('Canvas element not found!');
+                }
+            }
+            
+        </script>
+    </head>
+    <body>
+        <main align="center">            
+            <canvas id="canva_1" 
+                    width="350" 
+                    height="250" 
+                    style="border:4px double black;" 
+                    onMouseOver="DrawGradient();"/>
+        </main>
+    </body>
+</html>
