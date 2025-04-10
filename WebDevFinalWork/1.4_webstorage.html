@@ -1,0 +1,41 @@
+<!DOCTYPE html> <!-- realised task 1.4 -->
+<html>
+<head>
+    <title>WebStorage Page</title>
+    <link rel="stylesheet" href="1.2_styles.css">
+    <script>
+        function saveData() {
+            var inputElement = document.getElementById("nameInput");
+            if (!inputElement) {
+                console.error("Input element not found");
+                return;
+            }
+            var name = inputElement.value;
+            localStorage.setItem("userName", name);
+            alert("Data saved!");
+        }
+
+        function loadData() {
+            var resultElement = document.getElementById("result");
+            if (!resultElement) {
+                console.error("Result element not found");
+                return;
+            }
+            var name = localStorage.getItem("userName");
+            if (name) {
+                resultElement.innerHTML = "Saved name: " + name;
+            } else {
+                resultElement.innerHTML = "No data saved";
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">Back to Home</a>
+    <h2>WebStorage</h2>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button onclick="saveData()">Save</button>
+    <button onclick="loadData()">Load</button>
+    <p id="result"></p>
+</body>
+</html>

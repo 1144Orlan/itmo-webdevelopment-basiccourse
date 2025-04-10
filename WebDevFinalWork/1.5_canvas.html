@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- realised task 1.5 -->
 <html>
     <head>
-        <title>Using Canvas</title>
-        <script type="text/javascript">
+        <title>Canvas page</title>
+        <link rel="stylesheet" href="1.2_styles.css">
+        <script type="text/javascript">        
             function DrawGradient() {
                 var canvas = document.getElementById('canva_1');
                 if (canvas) {
@@ -15,9 +16,11 @@
                         my_gradient.addColorStop(1, "yellow");
                         context.fillStyle = my_gradient;
                         context.fillRect(0, 0, 350, 250);
+                    } else {
+                        console.error('Could not get canvas context');
                     }
                 } else {
-                    console.error('Canvas element not found!');
+                    console.error('Canvas element not found');
                 }
             }
          
@@ -27,22 +30,27 @@
                     var context = canvas.getContext('2d');
                     if (context) {
                         context.clearRect(0, 0, 350, 250);
+                    } else {
+                        console.error('Could not get canvas context');
                     }
                 } else {
-                    console.error('Canvas element not found!');
+                    console.error('Canvas element not found');
                 }
             }
         </script>
     </head>
     <body>
+        <a href="index.html">Back to Home</a>
         <main align="center">
             <h2>Using Canvas API in final work</h2>
-            <canvas id="canva_1" 
-                    width="350" 
-                    height="250" 
-                    style="border:4px double black;" 
-                    onMouseOver="DrawGradient();" 
-                    onMouseOut="ClearRect();"/>
+            <canvas 
+                id="canva_1" 
+                width="350" 
+                height="250" 
+                style="border:4px double black;" 
+                onMouseOver="DrawGradient();" 
+                onMouseOut="ClearRect();"
+            />
         </main>
     </body>
 </html>
